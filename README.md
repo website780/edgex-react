@@ -2,7 +2,7 @@
 
 Stack: Next.js (static export) · React · Tailwind CSS v4 · Framer Motion
 
-## Run
+## Run,
 ```bash
 npm install
 npm run dev          # http://localhost:3000
