@@ -26,13 +26,15 @@ No backend. Output is plain HTML/CSS/JS.
 - `components/` – Navbar, Footer, PageHero, CtaBand, ContactForm, WhatsAppFab, Reveal (Reveal, SplitWords, Counter), `home/*` sections
 - `public/img/` – all images downloaded from the old site (logo, faculty, hero cut-out, course diagrams, testimonial avatars)
 
-## Design system
-- Colors (globals.css `@theme`): navy `#0d1840`, navy-2, ink `#0a1030`, gold `#d4a62a`, gold-soft, plum `#4b2e6f`, ivory `#fbf8f1` (page bg), sand `#f2ecdd`. Taken from the logo (navy + gold + purple tagline).
-- `.gold-text` = animated gold gradient text. Gradient must stay mid-tone (no near-white stops) or it vanishes on ivory.
-- Logo (`/img/logo.png`) has dark navy text on transparent → **only place it on light backgrounds** (navbar pill, footer ivory chip).
-- Pattern: dark navy hero/CTA sections with `.grain` + blurred gold/plum blobs, ivory/sand content sections, rounded-[2rem] cards.
-- Animation conventions: `Reveal` for scroll fade-up, `SplitWords` for headline word reveal (`gold={[wordIndexes]}`), `Counter` for count-up. `prefers-reduced-motion` handled in CSS.
-- Blog article styling = `.prose-edgex` in globals.css (WP HTML is injected; `wp-block-*` classes stripped in sync script, internal links rewritten to relative).
+## Design system (plain institute look, deliberately not "AI-styled")
+- Palette (globals.css `@theme`): navy `#0d1840` (logo), gold `#d4a62a` (flat, used for buttons/accents only), white page, cool light-grey `sand` `#f3f5f9` for alternating bands, `line` `#dde2ec` borders.
+- Type: Plus Jakarta Sans only (headings bold, tight tracking). No serif display font.
+- Avoid: gradients, blurred glow blobs, grain, glassmorphism, gradient text, floating chips, marquees, word-by-word headline animation, big pill radii. Cards are `rounded-md` with a 1px border; buttons `rounded`.
+- Layout pattern: utility bar + sticky white navbar; light hero with photo; navy stats strip; plain bordered cards; navy footer. Sections use `py-12 sm:py-16`.
+- Motion: only a small fade-in (`Reveal`) and the Counter. `SplitWords` is now just a plain heading.
+- Photos: Unsplash stock in `public/img/stock/`; faculty photos are the real ones in `public/img/`. Logo has dark text, keep it on light backgrounds.
+- Enquire buttons open the popup form (`EnquiryModal.tsx`, `useEnquiry`/`EnquireButton`) with the course preselected.
+- Blog article styling = `.prose-edgex` in globals.css (WP HTML is injected).
 
 ## Decisions made
 - Next.js over plain React for SEO ("CA classes Mumbai"). Same URLs as WP: `/ca/`, `/acca/`, `/cfa/`, `/11th-12th-commerce/`, `/about/`, `/blog/`, `/contact/`, `/<post-slug>/`.

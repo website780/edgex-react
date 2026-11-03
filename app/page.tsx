@@ -1,5 +1,4 @@
 import Hero from '@/components/home/Hero';
-import Marquee from '@/components/home/Marquee';
 import Pathways from '@/components/home/Pathways';
 import Approach from '@/components/home/Approach';
 import Faculty from '@/components/home/Faculty';
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee />
       <Pathways />
       <Approach />
       <Faculty />

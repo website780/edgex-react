@@ -19,7 +19,7 @@ export default function WhatsAppFab() {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: 'spring', stiffness: 220, damping: 14 }}
       whileHover={{ scale: 1.1 }}
-      className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_-8px_rgba(37,211,102,.7)]"
+      className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg"
     >
       <span className="wa-ring absolute inset-0 -z-10 rounded-full bg-[#25D366]" />
       <span className="wa-ring wa-ring-2 absolute inset-0 -z-10 rounded-full bg-[#25D366]" />

@@ -46,29 +46,28 @@ export default async function Post({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <header className="grain relative overflow-hidden bg-navy px-6 pb-24 pt-36 text-white sm:pt-44">
-        <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-gold/25 blur-[100px]" />
-        <div className="relative mx-auto max-w-3xl">
-          <Link href="/blog/" className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline"><ArrowLeft size={16} /> All articles</Link>
-          <p className="mt-8 text-xs font-bold uppercase tracking-[.25em] text-white/50">{fmtDate(p.date)}</p>
-          <h1 className="font-display mt-4 text-3xl leading-[1.12] sm:text-5xl">{p.title}</h1>
+      <header className="border-b border-line bg-sand">
+        <div className="mx-auto max-w-3xl px-6 py-10 sm:py-12">
+          <Link href="/blog/" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:underline"><ArrowLeft size={16} /> All articles</Link>
+          <p className="mt-6 text-sm font-semibold text-navy/55">{fmtDate(p.date)}</p>
+          <h1 className="font-display mt-2 text-3xl leading-tight text-navy sm:text-4xl">{p.title}</h1>
         </div>
       </header>
 
-      <article className="mx-auto -mt-9 max-w-3xl px-6 pb-14">
+      <article className="mx-auto max-w-3xl px-6 py-10 sm:py-12">
         {p.image && (
-          <div className="relative aspect-[2/1] overflow-hidden rounded-[1.75rem] shadow-2xl">
+          <div className="relative aspect-[2/1] overflow-hidden rounded-md border border-line">
             <Image src={p.image} alt={p.title} fill sizes="768px" priority className="object-cover" />
           </div>
         )}
-        <div className="prose-edgex mt-10" dangerouslySetInnerHTML={{ __html: p.content }} />
+        <div className="prose-edgex mt-8" dangerouslySetInnerHTML={{ __html: p.content }} />
 
-        <Link href={`/${next.slug}/`} className="group mt-16 flex items-center justify-between gap-6 rounded-3xl border border-navy/10 bg-white p-6 transition hover:border-gold hover:shadow-lg">
+        <Link href={`/${next.slug}/`} className="group mt-12 flex items-center justify-between gap-6 rounded-md border border-line bg-white p-5 hover:border-navy">
           <span>
-            <span className="text-xs font-bold uppercase tracking-widest text-plum">Read next</span>
-            <span className="font-display mt-1 block text-xl text-navy">{next.title}</span>
+            <span className="text-sm font-semibold text-navy/55">Read next</span>
+            <span className="font-display mt-1 block text-lg text-navy group-hover:underline">{next.title}</span>
           </span>
-          <ArrowRight className="shrink-0 text-gold transition group-hover:translate-x-1" />
+          <ArrowRight className="shrink-0 text-gold" />
         </Link>
       </article>
       <CtaBand />

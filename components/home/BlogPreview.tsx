@@ -1,46 +1,42 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import posts from '@/data/posts.json';
-import { Reveal, SplitWords } from '../Reveal';
 
 export const fmtDate = (d: string) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
-export function PostCard({ p, i = 0 }: { p: (typeof posts)[number]; i?: number }) {
+export function PostCard({ p }: { p: (typeof posts)[number]; i?: number }) {
   return (
-    <Reveal delay={(i % 3) * 0.1}>
-      <Link href={`/${p.slug}/`} className="group block h-full overflow-hidden rounded-[1.75rem] border border-navy/10 bg-white transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_50px_-24px_rgba(13,24,64,.45)]">
-        <div className="relative aspect-[2/1] overflow-hidden bg-sand">
-          {p.image && <Image src={p.image} alt={p.title} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover transition duration-700 group-hover:scale-105" />}
-        </div>
-        <div className="p-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-plum">{fmtDate(p.date)}</p>
-          <h3 className="font-display mt-3 text-xl leading-snug text-navy">{p.title}</h3>
-          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-navy/65">{p.excerpt}</p>
-          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-navy">
-            Read more <ArrowUpRight size={16} className="text-gold transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </span>
-        </div>
-      </Link>
-    </Reveal>
+    <Link href={`/${p.slug}/`} className="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-white hover:border-navy">
+      <div className="relative aspect-[2/1] overflow-hidden bg-sand">
+        {p.image && <Image src={p.image} alt={p.title} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover" />}
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <p className="text-xs font-semibold text-navy/55">{fmtDate(p.date)}</p>
+        <h3 className="font-display mt-2 text-lg leading-snug text-navy group-hover:underline">{p.title}</h3>
+        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-navy/65">{p.excerpt}</p>
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-navy">
+          Read more <ArrowRight size={15} className="text-gold" />
+        </span>
+      </div>
+    </Link>
   );
 }
 
 export default function BlogPreview() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-      <div className="flex flex-wrap items-end justify-between gap-6">
+      <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Reveal><p className="text-xs font-bold uppercase tracking-[.3em] text-plum">From the blog</p></Reveal>
-          <SplitWords as="h2" text="Valuable insights to guide your journey." gold={[1]} className="font-display mt-4 max-w-2xl text-4xl leading-[1.08] text-navy sm:text-5xl" />
+          <h2 className="font-display text-3xl text-navy sm:text-4xl">From the blog</h2>
+          <p className="mt-2 text-navy/70">Study plans, exam updates and career guidance.</p>
         </div>
-        <Link href="/blog/" className="group inline-flex items-center gap-2 font-bold text-navy">
-          <span className="border-b-2 border-gold pb-0.5">All articles</span>
-          <ArrowUpRight size={18} className="text-gold transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <Link href="/blog/" className="inline-flex items-center gap-2 font-bold text-navy hover:underline">
+          All articles <ArrowRight size={18} className="text-gold" />
         </Link>
       </div>
-      <div className="mt-9 grid gap-6 md:grid-cols-3">
-        {posts.slice(0, 3).map((p, i) => <PostCard key={p.slug} p={p} i={i} />)}
+      <div className="mt-8 grid gap-5 md:grid-cols-3">
+        {posts.slice(0, 3).map((p) => <PostCard key={p.slug} p={p} />)}
       </div>
     </section>
   );
