@@ -20,7 +20,7 @@ export default function About() {
         eyebrow="About us"
         title="About EdgeX Learning: Professional Coaching in Mumbai"
         sub="An independent educational institute founded by CA/CS Nihal Bhatt, with centres in Borivali and Andheri."
-        image="/img/stock/lecture.jpg"
+        image="/img/people/classroom.jpg"
         imageAlt="A lecture in progress"
       />
 

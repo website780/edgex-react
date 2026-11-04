@@ -90,7 +90,7 @@ export const COURSES: Course[] = [
     intro:
       'The concepts and habits developed in 11th directly influence what follows. EdgeX Learning helps students begin correctly, stay consistent and understand where commerce can take them.',
     cardBlurb: 'A strong start for boards and future professional pathways.',
-    photo: '/img/stock/commerce.jpg',
+    photo: '/img/people/girls-class.jpg',
     stages: [
       { t: '11th Commerce', d: 'Build the accounting and business foundation the right way.' },
       { t: '12th Commerce', d: 'Deepen concepts with board-focused practice.' },
@@ -122,7 +122,7 @@ export const COURSES: Course[] = [
     intro:
       'CA preparation requires more than attending lectures. Students must understand complex ideas, coordinate subjects, practise consistently and revise with purpose. EdgeX Learning brings these parts together.',
     cardBlurb: 'Specialist teaching and structured CA preparation.',
-    photo: '/img/stock/ca.jpg',
+    photo: '/img/people/exam-writing.jpg',
     stages: [
       { t: 'CA Foundation', d: 'Start with core accounting, law, maths and economics.' },
       { t: 'CA Intermediate', d: 'Specialist faculty for every subject, with steady practice.' },
@@ -154,7 +154,7 @@ export const COURSES: Course[] = [
     intro:
       'Students and parents need clarity on eligibility, exemptions, paper progression, preparation and career direction. EdgeX Learning helps them understand the route before admission and provides structured support once the journey begins.',
     cardBlurb: 'A guided route towards a globally recognised qualification.',
-    photo: '/img/stock/acca.jpg',
+    photo: '/img/people/study-room.jpg',
     stages: [
       { t: 'Applied Knowledge', d: 'Foundations of accounting, business and management.' },
       { t: 'Applied Skills', d: 'Paper-by-paper application of core finance skills.' },
@@ -186,7 +186,7 @@ export const COURSES: Course[] = [
     intro:
       'CFA rewards consistent, well-planned preparation. EdgeX Learning gives candidates a clear route through the curriculum, regular practice and support when concepts get difficult.',
     cardBlurb: 'Structured Level 1, 2 and 3 preparation for investment careers.',
-    photo: '/img/stock/cfa.jpg',
+    photo: '/img/people/blazers.jpg',
     stages: [
       { t: 'CFA Level 1', d: 'Core tools of investment analysis and ethics.' },
       { t: 'CFA Level 2', d: 'Valuation and application across asset classes.' },

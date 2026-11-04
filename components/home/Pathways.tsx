@@ -5,7 +5,7 @@ import { COURSES } from '@/lib/site';
 
 export default function Pathways() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+    <section id="programmes" className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
       <h2 className="font-display text-3xl text-navy sm:text-4xl">Our programmes</h2>
       <p className="mt-2 max-w-2xl text-navy/70">Four routes, one experienced team. Pick the one that matches where you are.</p>
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
