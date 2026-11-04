@@ -22,7 +22,7 @@ export const CENTRES = [
   },
   {
     name: 'Andheri',
-    address: ['901, Crescent Plaza, Teli Gali', 'Andheri East, Mumbai'],
+    address: ['401, 4th Floor, B Wing, Vertex Vikas', 'Andheri East, Mumbai, Maharashtra 400069'],
     phone: '+91 85910 21923',
     tel: '+918591021923',
   },

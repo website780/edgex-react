@@ -33,7 +33,7 @@ const orgJsonLd = {
   founder: { '@type': 'Person', name: 'Nihal Bhatt' },
   address: [
     { '@type': 'PostalAddress', streetAddress: '2nd Floor, Siddharth Arcade, Opposite Manubhai Jewellers', addressLocality: 'Borivali, Mumbai', addressCountry: 'IN' },
-    { '@type': 'PostalAddress', streetAddress: '901, Crescent Plaza, Teli Gali', addressLocality: 'Andheri East, Mumbai', addressCountry: 'IN' },
+    { '@type': 'PostalAddress', streetAddress: '401, 4th Floor, B Wing, Vertex Vikas', addressLocality: 'Andheri East, Mumbai', addressRegion: 'Maharashtra', postalCode: '400069', addressCountry: 'IN' },
   ],
   telephone: '+919820088974',
 };
