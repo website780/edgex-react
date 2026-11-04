@@ -10,14 +10,21 @@ export default function Navbar() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => { setOpen(false); setDrop(false); }, [path]);
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 40);
+    on();
+    window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
+  }, []);
 
   const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <div className="hidden bg-navy text-[13px] text-white/80 sm:block">
+      <div className={`hidden overflow-hidden bg-navy text-[13px] text-white/80 transition-all duration-300 ease-out sm:block ${scrolled ? 'max-h-0 opacity-0' : 'max-h-10 opacity-100'}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
           <p>Coaching for CA · ACCA · CFA · 11th &amp; 12th Commerce | Borivali &amp; Andheri, Mumbai</p>
           <div className="flex items-center gap-5">
@@ -27,7 +34,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="border-b border-line">
+      <nav className={`border-b border-line transition-shadow duration-300 ${scrolled ? 'shadow-[0_6px_16px_-12px_rgba(13,24,64,.35)]' : ''}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5">
           <Link href="/" aria-label="EdgeX Learning home" className="shrink-0">
             <Image src="/img/logo.png" alt="EdgeX Learning" width={160} height={76} priority className="h-11 w-auto sm:h-12" />

@@ -92,7 +92,7 @@ export default function Faculty() {
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="reveal mt-10">
         <FacultyCarousel />
       </div>
     </section>

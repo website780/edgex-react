@@ -1,11 +1,10 @@
 'use client';
-import { motion, useInView, animate } from 'framer-motion';
+import { useInView, animate } from 'framer-motion';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
-/** Quiet fade-in on scroll. Kept deliberately small. */
+/** Marks a block to ease in as it scrolls into view (handled by <Motion />). */
 export function Reveal({
   children,
-  delay = 0,
   className = '',
 }: {
   children: ReactNode;
@@ -14,17 +13,7 @@ export function Reveal({
   x?: number;
   className?: string;
 }) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay, ease: 'easeOut' }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={`reveal ${className}`.trim()}>{children}</div>;
 }
 
 /** Plain heading (name kept so existing pages keep working). */

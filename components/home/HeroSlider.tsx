@@ -121,12 +121,12 @@ export default function HeroSlider() {
                 fill
                 priority={k === 0}
                 sizes="100vw"
-                className={`object-cover transition-transform ease-out ${on ? 'scale-100 duration-[7000ms]' : 'scale-[1.06] duration-0'}`}
+                className={`object-cover transition-transform ease-out ${k === 0 ? 'intro-settle' : ''} ${on ? 'scale-100 duration-[7000ms]' : 'scale-[1.06] duration-0'}`}
               />
               <div className="absolute inset-0 bg-navy/50" />
 
               <div className="relative mx-auto flex h-full max-w-6xl items-center px-6 pb-16">
-                <div className={`max-w-xl transition-all duration-700 ease-out ${on ? 'translate-y-0 opacity-100 delay-200' : 'translate-y-4 opacity-0'}`}>
+                <div className={`${k === 0 ? 'intro-rise ' : ''}max-w-xl transition-all duration-700 ease-out ${on ? 'translate-y-0 opacity-100 delay-200' : 'translate-y-4 opacity-0'}`}>
                   <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl lg:text-[3.4rem]">{s.title}</h2>
                   <p className="mt-5 max-w-md text-lg leading-relaxed text-white/85">{s.text}</p>
                   <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">

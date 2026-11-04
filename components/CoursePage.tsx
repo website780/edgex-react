@@ -98,7 +98,7 @@ export default function CoursePage({ c }: { c: Course }) {
           })}
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 rounded-md border-l-4 border-gold bg-gold-soft p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="reveal mt-8 flex flex-col gap-4 rounded-md border-l-4 border-gold bg-gold-soft p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-xl text-navy">Interested in {c.short}?</p>
             <p className="mt-1 text-navy/70">Talk to an educator about batches, timings and fees.</p>

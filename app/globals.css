@@ -53,3 +53,60 @@ body {
 @keyframes wa-ring { 0% { transform: scale(1); opacity: .55; } 70%,100% { transform: scale(1.7); opacity: 0; } }
 .wa-ring { animation: wa-ring 2.8s cubic-bezier(.2,.6,.3,1) infinite; }
 .wa-ring-2 { animation-delay: 1.4s; }
+
+/* ───────────── motion ─────────────
+   Measured on Stripe, Apple, Linear and JK Shah Classes: hover/UI changes run 150-300ms on an
+   ease-out curve; entrances 500-800ms on a strong ease-out; short travel; no bounce. */
+:root {
+  --ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a, button { transition: color .2s var(--ease-ui), background-color .2s var(--ease-ui), border-color .2s var(--ease-ui), opacity .2s var(--ease-ui), text-decoration-color .2s var(--ease-ui); }
+main a.group { transition: border-color .25s var(--ease-ui), transform .3s var(--ease-out); }
+main a.group img { transition: transform .8s var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  main a.group:hover { transform: translateY(-3px); }
+  main a.group:hover img { transform: scale(1.04); }
+}
+.bg-gold:active, button.bg-navy:active { transform: scale(.98); }
+
+@keyframes reveal { from { opacity: 0; transform: translateY(22px); } }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes drop { from { opacity: 0; transform: translateY(-10px); } }
+@keyframes settle { from { transform: scale(1.06); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* page change: each page eases in */
+  .page-in { animation: page-in .5s var(--ease-out) both; }
+
+  /* opening the site: header, then the first block of the page */
+  body > header { animation: drop .6s var(--ease-out) backwards; }
+  .page-in > :first-child h1 { animation: rise .8s var(--ease-out) .08s backwards; }
+  .page-in > :first-child h1 ~ * { animation: rise .8s var(--ease-out) .2s backwards; }
+  .page-in > :first-child p:has(+ h1) { animation: rise .8s var(--ease-out) backwards; }
+  .page-in > :first-child .reveal { animation: rise .9s var(--ease-out) .3s backwards; }
+  .intro-rise { animation: rise .9s var(--ease-out) .25s backwards; }
+  .intro-settle { animation: settle 2.4s var(--ease-out) backwards; }
+
+  /* scrolling: sections ease in once, starting hidden (no flash: the .js class is set before paint) */
+  .js:not(.reveal-all) :is(
+  .page-in > :not(:first-child) > h2,
+  .page-in > :not(:first-child) > h2 + p,
+  .page-in > :not(:first-child) :not(.grid > *) > h2,
+  .page-in > :not(:first-child) :not(.grid > *) > h2 + p,
+  .page-in > :not(:first-child) .grid > *,
+  .page-in > .grid:not(:first-child) > *,
+  .page-in > :not(:first-child) .reveal
+  ):not(.is-in) { opacity: 0; }
+  .js :is(
+  .page-in > :not(:first-child) > h2,
+  .page-in > :not(:first-child) > h2 + p,
+  .page-in > :not(:first-child) :not(.grid > *) > h2,
+  .page-in > :not(:first-child) :not(.grid > *) > h2 + p,
+  .page-in > :not(:first-child) .grid > *,
+  .page-in > .grid:not(:first-child) > *,
+  .page-in > :not(:first-child) .reveal
+  ).is-in { animation: reveal .85s var(--ease-out) var(--d, 0s) backwards; }
+}

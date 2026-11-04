@@ -11,6 +11,7 @@ const STATS = [
 export default function Hero() {
   return (
     <header>
+      <h1 className="sr-only">EdgeX Learning: CA, ACCA, CFA and 11th–12th Commerce classes in Mumbai</h1>
       <HeroSlider />
       <div className="bg-navy text-white">
         <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-y-6 px-6 py-7 md:grid-cols-4">
