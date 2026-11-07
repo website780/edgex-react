@@ -1,22 +1,26 @@
 import Hero from '@/components/home/Hero';
-import Pathways from '@/components/home/Pathways';
-import Approach from '@/components/home/Approach';
-import Faculty from '@/components/home/Faculty';
-import Testimonials from '@/components/home/Testimonials';
-import BlogPreview from '@/components/home/BlogPreview';
-import CtaBand from '@/components/CtaBand';
-import { SITE } from '@/lib/site';
+import Marquees from '@/components/home/Marquees';
+import StatsBand from '@/components/home/StatsBand';
+import Programmes from '@/components/home/Programmes';
+import Method from '@/components/home/Method';
+import FacultyTeam from '@/components/home/FacultyTeam';
+import QA from '@/components/home/QA';
+import Posts from '@/components/home/Posts';
+import Finale from '@/components/home/Finale';
 
 export default function Home() {
+  // One wrapper keeps the older per-page reveal selectors in globals.css out of the way; sections animate themselves.
   return (
-    <>
+    <div>
       <Hero />
-      <Pathways />
-      <Approach />
-      <Faculty />
-      {SITE.showTestimonials && <Testimonials />}
-      <BlogPreview />
-      <CtaBand />
-    </>
+      <StatsBand />
+      <Programmes />
+      <Marquees />
+      <Method />
+      <FacultyTeam />
+      <QA />
+      <Posts />
+      <Finale />
+    </div>
   );
 }

@@ -33,16 +33,16 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
           <motion.div
             key="enquiry"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[80] flex items-end justify-center overflow-y-auto bg-ink/70 p-0 sm:items-center sm:p-6"
+            data-lenis-prevent className="fixed inset-0 z-[80] flex items-end justify-center overflow-y-auto bg-deep/75 p-0 backdrop-blur-sm sm:items-center sm:p-6"
             onMouseDown={(e) => e.target === e.currentTarget && close()}
           >
             <motion.div
               role="dialog" aria-modal="true" aria-label="Send an enquiry"
-              initial={{ opacity: 0, y: 40, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 30, scale: 0.97 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 50, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 30, scale: 0.97 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="relative my-auto w-full max-w-xl"
             >
-              <button onClick={close} aria-label="Close enquiry form" className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded bg-navy text-white hover:bg-gold hover:text-ink sm:right-4 sm:top-4">
+              <button onClick={close} aria-label="Close enquiry form" className="absolute right-3 top-4 z-10 grid h-10 w-10 place-items-center rounded bg-white text-navy shadow ring-1 ring-line hover:bg-accent hover:text-white sm:right-4 sm:top-5">
                 <X size={18} />
               </button>
               <ContactForm key={state.n} defaultCourse={state.course} compact />

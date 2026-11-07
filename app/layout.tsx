@@ -3,7 +3,8 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFab from '@/components/WhatsAppFab';
-import Motion from '@/components/Motion';
+import Cursor from '@/components/Cursor';
+import Smooth from '@/components/Smooth';
 import { EnquiryProvider } from '@/components/EnquiryModal';
 import { SITE } from '@/lib/site';
 
@@ -41,19 +42,12 @@ const orgJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "document.documentElement.classList.add('js');setTimeout(function(){if(!document.documentElement.hasAttribute('data-motion-ready'))document.documentElement.classList.add('reveal-all')},5000)",
-          }}
-        />
-      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <EnquiryProvider>
         <Navbar />
-        <Motion />
+        <Smooth />
+        <Cursor />
         <main>{children}</main>
         <Footer />
         <WhatsAppFab />
