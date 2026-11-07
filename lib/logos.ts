@@ -1,0 +1,28 @@
+// Company logos for the "Our alumni work at" strip. Images were taken from the JK Shah Classes site (same owner).
+// CONFIRM with the client that these employers apply to EdgeX before launch.
+export const ALUMNI_LOGOS: { name: string; file: string }[] = [
+  { name: 'Adani', file: '01-adani.webp' },
+  { name: 'NTPC', file: '02-ntpc.webp' },
+  { name: 'Reliance', file: '03-reliance.webp' },
+  { name: 'Infosys', file: '04-infosys.webp' },
+  { name: 'Deloitte', file: '05-deloitte.webp' },
+  { name: 'PwC', file: '06-pwc.webp' },
+  { name: 'EY', file: '07-ey.webp' },
+  { name: 'Wells Fargo', file: '08-wells-fargo.webp' },
+  { name: 'BNP Paribas', file: '09-bnp-paribas.webp' },
+  { name: 'Deutsche Bank', file: '10-deutsche-bank.webp' },
+  { name: 'KPMG', file: '11-kpmg.webp' },
+  { name: 'Grant Thornton', file: '12-grant-thornton.webp' },
+  { name: 'Goldman Sachs', file: '13-goldman-sachs.webp' },
+  { name: 'Morgan Stanley', file: '14-morgan-stanley.webp' },
+  { name: 'Visa', file: '15-visa.webp' },
+  { name: 'Credit Suisse', file: '16-credit-suisse.webp' },
+  { name: 'JPMorgan Chase', file: '17-jpmorgan.webp' },
+  { name: 'Barclays', file: '18-barclays.webp' },
+  { name: 'BDO', file: '19-bdo.webp' },
+  { name: 'Standard Chartered', file: '20-standard-chartered.webp' },
+  { name: 'DBS Bank', file: '21-dbs.webp' },
+  { name: 'Acies', file: '22-acies.webp' },
+  { name: 'BCG', file: '23-bcg.webp' },
+  { name: 'Nomura', file: '24-nomura.webp' },
+];
