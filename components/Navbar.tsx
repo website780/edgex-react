@@ -106,7 +106,7 @@ export default function Navbar() {
                 <span className="grid h-9 w-9 place-items-center rounded-full bg-gold/25"><Phone size={15} /></span>{CENTRES[0].phone}
               </a>
               <Magnetic className="hidden sm:inline-block">
-                <button onClick={() => enquire()} className="bg-navy px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-white hover:bg-navy-2">Enquire now</button>
+                <button onClick={() => enquire()} className="gold-grad px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-ink transition-[filter] hover:brightness-95">Enquire now</button>
               </Magnetic>
               <button onClick={() => setMenu((v) => !v)} className="grid h-11 w-11 place-items-center rounded border border-line text-navy lg:hidden" aria-label={menu ? 'Close menu' : 'Open menu'} aria-expanded={menu}>
                 {menu ? <X size={20} /> : <Menu size={20} />}
