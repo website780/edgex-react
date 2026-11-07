@@ -82,4 +82,4 @@ html.lenis, html.lenis body { height: auto; }
 @keyframes dot-bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-3px); opacity: 1; } }
 
 /* metallic gold, sampled from the X in the logo: bright highlight in the middle, deeper gold at the ends */
-.gold-grad { background-image: linear-gradient(95deg, #c2921a 0%, #e6c04a 28%, #f6df86 50%, #e0b838 70%, #b58510 100%); }
+.gold-grad { background-image: linear-gradient(95deg, #c9981c 0%, #dcb43a 50%, #c9981c 100%); }

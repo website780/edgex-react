@@ -21,12 +21,12 @@ export default function TopBar() {
   }, [reduce]);
 
   return (
-    <div className="gold-grad hidden text-[13px] text-ink sm:block">
+    <div className="hidden bg-navy text-[13px] text-white sm:block">
       <div className="mx-auto flex h-9 max-w-6xl items-center justify-between gap-6 px-6">
         <p className="flex min-w-0 flex-1 items-center gap-2.5">
           <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink opacity-50" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-ink" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
           </span>
           <span className="relative block h-5 min-w-0 flex-1 overflow-hidden">
             <AnimatePresence mode="wait" initial={false}>
@@ -46,9 +46,9 @@ export default function TopBar() {
 
         <div className="hidden shrink-0 items-center gap-5 md:flex">
           {CENTRES.map((c) => (
-            <a key={c.name} href={`tel:${c.tel}`} className="group inline-flex items-center gap-1.5 font-medium text-ink hover:underline hover:underline-offset-4">
+            <a key={c.name} href={`tel:${c.tel}`} className="group inline-flex items-center gap-1.5 font-medium text-white hover:underline hover:underline-offset-4">
               <Phone size={13} className="transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
-              <span className="text-ink/70">{c.name}</span>
+              <span className="text-white/65">{c.name}</span>
               <span className="font-bold">{c.phone}</span>
             </a>
           ))}
